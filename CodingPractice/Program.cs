@@ -56,3 +56,50 @@ player2.ShowInfo();
 Stock stock = new Stock();
 stock.CurrentPrice = 30;
 Console.WriteLine($"주가: {stock.CurrentPrice}");
+
+Product product = new Product();
+product.Name = "노트북";
+product.Price = 1500000;
+Console.WriteLine($"{product.Name}: {product.Price}원 (수량: {product.Quantity})");
+
+Circle circle = new Circle();
+circle.Radius = 5;
+Console.WriteLine($"반지름: {circle.Radius}, 넓이: {circle.Area:F2}");
+
+Monster monster1 =  new Monster();
+monster1.Name = "고블린";
+monster1.Health = 50;
+
+Monster monster2 = new Monster
+{
+    Name = "오크",
+    Health = 100
+};
+
+monster1.Attack();
+monster2.Attack();
+
+Character hero = new Character
+{
+    Name = "용사",
+    Level = 10,
+    Job = "전사"
+};
+
+Console.WriteLine($"{hero.Name} - Lv.{hero.Level} {hero.Job}");
+
+Random random = new Random();
+Console.WriteLine($"임의의 정수: {random.Next()}");
+Console.WriteLine($"0 ~ 4: {random.Next(5)}");
+Console.WriteLine($"1 ~ 9: {random.Next(1, 10)}");
+Console.WriteLine($"0.0 ~ 1.0: {random.NextDouble():F4}");
+
+Console.WriteLine("주사위를 5번 굴립니다:");
+for(int i = 0; i < 5; i++)
+{
+    Console.WriteLine($"{i + 1,2}번째: {random.Next(1, 7)}");
+}
+
+Person2 alice = new Person2("Alice", 25);
+Person2 bob = new Person2("Bob", 30);
+alice.SetFriend(bob);
